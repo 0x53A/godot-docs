@@ -43,8 +43,6 @@ The engine calls this method every time it draws a frame:
 Keep in mind that the frequency at which the engine calls ``_process()`` depends
 on your application's framerate, which varies over time and across devices.
 
-The processing fun
-
 The function's ``delta`` parameter is the time elapsed in seconds since the
 previous call to ``_process()``. Use this parameter to make calculations
 independent of the framerate. For example, you should always multiply a speed
