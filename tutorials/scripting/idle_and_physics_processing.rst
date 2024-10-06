@@ -9,6 +9,8 @@ class to do so: :ref:`Node._process() <class_Node_private_method__process>` and
 :ref:`Node._physics_process() <class_Node_private_method__physics_process>`. If you
 define either or both in a script, the engine will call them automatically.
 
+Processing happens in *tree order*, or top to bottom as seen in the editor (also known as pre-order traversal). This means that if the node has children, they will be processed after the parent node.
+
 There are two types of processing available to you:
 
 1. **Idle processing** allows you to run code that updates a node every frame,
@@ -40,6 +42,8 @@ The engine calls this method every time it draws a frame:
 
 Keep in mind that the frequency at which the engine calls ``_process()`` depends
 on your application's framerate, which varies over time and across devices.
+
+The processing fun
 
 The function's ``delta`` parameter is the time elapsed in seconds since the
 previous call to ``_process()``. Use this parameter to make calculations
